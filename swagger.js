@@ -6,7 +6,7 @@ const doc = {
     description: 'List of contacts'
   },
   // This can be switched to localhost 8080.
-  host: 'https://cse341-comics.herokuapp.com',
+  host: 'cse341-comics.herokuapp.com',
   schemes: ['http', 'https']
 };
 
