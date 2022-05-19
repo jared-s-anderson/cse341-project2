@@ -1,0 +1,112 @@
+{
+  "comic1": {
+    "title": "Spawn",
+    "issue": "#1",
+    "publication_date": "05/10/1992",
+    "page_count": "40",
+    "cover_price": "$1.95",
+    "publisher": "Image",
+    "artists": "Todd Mcfarlane",
+    "writers": "Todd Mcfarlane",
+    "editors": "Wanda Kolomyjec"
+  },
+  "comic2": {
+    "title": "Web of Spider-Man",
+    "issue": "#18",
+    "publication_date": "09/10/1986",
+    "page_count": "36",
+    "cover_price": "$0.75",
+    "publisher": "Marvel",
+    "artists": "Bob Sharen, Mark Beachum, Marc Silvestri, Rick Parker",
+    "writers": "David Michelinie",
+    "editors": "Jim Shooter"
+  },
+  "comic3": {
+    "title": "Batman",
+    "issue": "#241",
+    "publication_date": "04/30/1972",
+    "page_count": "52",
+    "cover_price": "$0.25",
+    "publisher": "DC Comics",
+    "artists": "George Roussos, Neals Adams, Irv Novick, Rich Buckler, Bob Kane",
+    "writers": "Denny O'Neil, Mike Friedrich, Bill Finger",
+    "editors": "Julius Schwartz"
+  },
+  "comic4": {
+    "title": "Teen Titans",
+    "issue": "#4",
+    "publication_date": "08/10/1966",
+    "page_count": "36",
+    "cover_price": "$0.12",
+    "publisher": "DC Comics",
+    "artists": "Nick Cardy, Henry Boltinoff, Morris Waldinger, Gaspar Saladino, Stan Starkman",
+    "writers": "Bob Haney, Henry Boltinoff, Jack Schiff",
+    "editors": "George Kashdan"
+  },
+  "comic5": {
+    "title": "Doom Patrol",
+    "issue": "#8",
+    "publication_date": "05/10/1988",
+    "page_count": "36",
+    "cover_price": "$0.75",
+    "publisher": "DC Comics",
+    "artists": "Michele Wolfman, Erik Larsen, John Workman",
+    "writers": "Paul Kupperberg",
+    "editors": "Robert Greenberger"
+  },
+  "comic6": {
+    "title": "Wolverine",
+    "issue": "#5",
+    "publication_date": "03/01/1989",
+    "page_count": "36",
+    "cover_price": "$1.50",
+    "publisher": "Marvel",
+    "artists": "Glynis Oliver, John Buscema, John Bolton, Janice Chiang",
+    "writers": "Chris Claremont",
+    "editors": "Bob Harras, Daryl Edelman"
+  },
+  "comic7": {
+    "title": "Daredevil",
+    "issue": "#257",
+    "publication_date": "07/31/1988",
+    "page_count": "36",
+    "cover_price": "$0.75",
+    "publisher": "Marvel",
+    "artists": "Max Scheele, John Romita Jr., Joe Rosen",
+    "writers": "Ann Nocenti",
+    "editors": "Ralph Macchio"
+  },
+  "comic8": {
+    "title": "Justice League",
+    "issue": "#2",
+    "publication_date": "06/10/1987",
+    "page_count": "36",
+    "cover_price": "$0.75",
+    "publisher": "DC Comics",
+    "artists": "Gene D'Angelo, Kevin Maguire, Keith Giffen, Bob Lappan",
+    "writers": "Keith Giffen, J.M. DeMatteis",
+    "editors": "Andrew Helfer"
+  },
+  "comic9": {
+    "title": "Punisher",
+    "issue": "#38",
+    "publication_date": "09/10/1990",
+    "page_count": "36",
+    "cover_price": "$1.00",
+    "publisher": "Marvel",
+    "artists": "Linda Lessmann, Bill Reinhold, Ken Lopez",
+    "writers": "Mike Baron",
+    "editors": "Rob Tokar, Don Daley"
+  },
+  "comic10": {
+    "title": "Deadman",
+    "issue": "#3",
+    "publication_date": "06/30/1985",
+    "page_count": "44",
+    "cover_price": "$1.75",
+    "publisher": "DC Comics",
+    "artists": "Neal Adams, Gil Kane",
+    "writers": "Jack Miller, Nicola Cuti, Gerry Conway",
+    "editors": "Nicola Cuti"
+  }
+}
