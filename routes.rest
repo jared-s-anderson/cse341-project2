@@ -23,3 +23,64 @@ Content-Type: application/json
   "editors": "Brian Augustyn"
 }
 
+### This updates a comic's information.
+PUT http://localhost:8080/comics/628669d7f02c4a0227b387ba HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Superman",
+  "issue": "184",
+  "publication_date": "01/31/1966",
+  "page_count": "36",
+  "cover_price": "$0.12",
+  "publisher": "DC Comics",
+  "artists": "Curt Swan, Al Plastino, Wayne Boring, Henry Boltinoff",
+  "writers": "Otto Binder, Henry Boltinoff",
+  "editors": "Mort Weisinger"
+}
+
+### This deletes a comic from the database.
+DELETE http://localhost:8080/comics/628669aaf02c4a0227b387b9 HTTP/1.1
+
+// Production Deploy
+
+### This retrives all of the comics from the database.
+GET https://cse341-comics.herokuapp.com/comics
+
+### Retrieving by id
+GET https://cse341-comics.herokuapp.com/comics/6285bb53f065a040096e8434
+
+### This adds a comic to the database.
+POST https://cse341-comics.herokuapp.com/comics HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Justice Society of America",
+  "issue": "#7",
+  "publication_date": "01/31/1993",
+  "page_count": "36",
+  "cover_price": "$1.25",
+  "publisher": "DC Comics",
+  "artists": "Glenn Whitmore, Mike Parobeck, Bob Pinaha",
+  "writers": "Len Strazewski",
+  "editors": "Brian Augustyn"
+}
+
+### This updates a comic's information.
+PUT https://cse341-comics.herokuapp.com/comics/628669d7f02c4a0227b387ba HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Superman",
+  "issue": "184",
+  "publication_date": "01/31/1966",
+  "page_count": "36",
+  "cover_price": "$0.12",
+  "publisher": "DC Comics",
+  "artists": "Curt Swan, Al Plastino, Wayne Boring, Henry Boltinoff",
+  "writers": "Otto Binder, Henry Boltinoff",
+  "editors": "Mort Weisinger"
+}
+
+### This deletes a comic from the database.
+DELETE https://cse341-comics.herokuapp.com/comics/628669d7f02c4a0227b387ba HTTP/1.1
