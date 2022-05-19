@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'Contacts API',
-    description: 'List of contacts'
+    title: 'Comics API',
+    description: 'Comic Information'
   },
   // This can be switched to localhost 8080.
   host: 'cse341-comics.herokuapp.com',
