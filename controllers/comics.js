@@ -3,21 +3,38 @@ const ObjectId = require('mongodb').ObjectId;
 
 // This gets all of the comic information.
 const retrieveAll = async (req, res) => {
-  const result = await mongodb.getDb().db().collection('comics').find();
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-  });
+  mongodb
+    .getDb()
+    .db()
+    .collection('comics')
+    .find()
+    .toArray((err, lists) => {
+      if (err) {
+        res.status(400).json({ messge: err });
+      }
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists);
+    });
 };
 
 // This gets information for one of the comics.
 const retriveSingle = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('A valid id must be used to find a comic.');
+  }
   const userId = new ObjectId(req.params.id);
-  const result = await mongodb.getDb().db().collection('comics').find({ _id: userId });
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
-  });
+  mongodb
+    .getDb()
+    .db()
+    .collection('comics')
+    .find({ _id: userId })
+    .toArray((err, result) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      }
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(result[0]);
+    });
 };
 
 // This adds a comic to the database.
@@ -43,6 +60,9 @@ const addComic = async (req, res) => {
 
 // This updates a comic in the database.
 const updateComic = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("A valid id must be used to update a comic's infromation.");
+  }
   const userId = new ObjectId(req.params.id);
   const existingComic = {
     title: req.body.title,
@@ -70,6 +90,9 @@ const updateComic = async (req, res) => {
 
 // This deletes one of the comics from the database.
 const deleteComic = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('A valid id must be used to delete a comic.');
+  }
   const userId = new ObjectId(req.params.id);
   const response = await mongodb.getDb().db().collection('comics').deleteOne({ _id: userId }, true);
   console.log(response);

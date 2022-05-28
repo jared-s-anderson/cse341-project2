@@ -6,7 +6,7 @@ const doc = {
     description: 'Comic Information'
   },
   // This can be switched to localhost 8080.
-  host: 'cse341-comics.herokuapp.com',
+  host: 'https://cse341-comics.herokuapp.com',
   schemes: ['http', 'https']
 };
 
