@@ -5,7 +5,7 @@
     "description": "This API retrieves comic information.",
     "version": "1.0.0"
   },
-  "host": "https://cse341-comics.herokuapp.com",
+  "host": "cse341-comics.herokuapp.com",
   "basePath": "/",
   "schemes": ["http", "https"],
   "tags": [
