@@ -7,7 +7,7 @@ const mongodb = require('./db/connect');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Config vars need to be added in the Heroku settings.
+// Config vars need to be added in the heroku settings.
 const config = {
   authRequired: false,
   auth0Logout: true,
