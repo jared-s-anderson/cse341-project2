@@ -23,9 +23,6 @@ app.use(auth(config));
 // req.isAuthenticated is provided from the auth router
 app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-  if (req.oidc.isAuthenticated() == true) {
-    res.send('https://cse341-comics.herokuapp.com/api-docs');
-  }
 });
 
 app.get('/profile', requiresAuth(), (req, res) => {
