@@ -1,11 +1,12 @@
 const express = require('express');
+const { requiresAuth } = require('express-openid-connect');
 const routes = express.Router();
 
 const comicsController = require('../controllers/comics');
 const validation = require('../middleware/validate');
 
 // This get request retrieves information for all of the comics in the database.
-routes.get('/', comicsController.retrieveAll);
+routes.get('/', requiresAuth(), comicsController.retrieveAll);
 
 // This get request retrives information for a single issue.
 routes.get('/:id', comicsController.retriveSingle);

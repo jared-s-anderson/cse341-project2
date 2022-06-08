@@ -29,6 +29,10 @@ app.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
 });
 
+// app.get('/comics', requiresAuth(), (req, res) => {
+//   res.send(JSON.stringify(req.oidc.user));
+// });
+
 app
   .use(bodyParser.json())
   .use(cors())

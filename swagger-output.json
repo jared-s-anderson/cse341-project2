@@ -14,6 +14,16 @@
       "description": "Request Methods"
     }
   ],
+  "securityDefinitions": {
+    "oauth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://cse341-comics.herokuapp.com/api/auth",
+      "flow": "implicit",
+      "scopes": {
+        "read:comics": "read comic data"
+      }
+    }
+  },
   "paths": {
     "/comics/": {
       "get": {
