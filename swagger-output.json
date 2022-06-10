@@ -2,44 +2,41 @@
   "swagger": "2.0",
   "info": {
     "title": "Comics API",
-    "description": "This API retrieves comic information.",
+    "description": "Comic Information",
     "version": "1.0.0"
   },
   "host": "cse341-comics.herokuapp.com",
   "basePath": "/",
-  "schemes": ["http", "https"],
-  "tags": [
-    {
-      "name": "Comics",
-      "description": "Request Methods"
-    }
+  "schemes": [
+    "http",
+    "https"
   ],
-  "securityDefinitions": {
-    "oauth": {
-      "type": "oauth2",
-      "authorizationUrl": "https://cse341-comics.herokuapp.com/api/auth",
-      "flow": "implicit",
-      "scopes": {
-        "read:comics": "read comic data"
-      }
-    }
-  },
   "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/comics/": {
       "get": {
-        "tags": ["Comics"],
-        "description": "This retrieves information for all of the comics in the database.",
-        "produces": ["application/json"],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
       "post": {
-        "tags": ["Comics"],
-        "description": "This adds a comic to the database.",
+        "description": "",
         "parameters": [
           {
             "name": "body",
@@ -82,6 +79,9 @@
           "201": {
             "description": "Created"
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -90,9 +90,10 @@
     },
     "/comics/{id}": {
       "get": {
-        "tags": ["Comics"],
-        "description": "This retrieves a comic's information",
-        "produces": ["application/json"],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -104,12 +105,14 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
       "put": {
-        "tags": ["Comics"],
-        "description": "This updates a comic's information.",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -158,14 +161,19 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       },
       "delete": {
-        "tags": ["Comics"],
-        "description": "This deletes a comic from the database.",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -178,6 +186,9 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -187,7 +198,9 @@
     "/users/": {
       "get": {
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -230,97 +243,107 @@
           "201": {
             "description": "Created"
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       }
     },
-    "get": {
-      "description": "",
-      "produces": ["application/json"],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
+    "/users/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
         }
-      ],
-      "responses": {
-        "200": {
-          "description": "OK"
-        },
-        "400": {
-          "description": "Bad Request"
-        }
-      }
-    },
-    "delete": {
-      "description": "",
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "responses": {
-        "204": {
-          "description": "No Content"
-        },
-        "400": {
-          "description": "Bad Request"
-        },
-        "500": {
-          "description": "Internal Server Error"
-        }
-      }
-    },
-    "put": {
-      "description": "",
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "name": "body",
-          "in": "body",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "tenant": {
-                "example": "any"
-              },
-              "connection": {
-                "example": "any"
-              },
-              "email": {
-                "example": "any"
-              },
-              "password": {
-                "example": "any"
-              },
-              "debug": {
-                "example": "any"
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tenant": {
+                  "example": "any"
+                },
+                "connection": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "debug": {
+                  "example": "any"
+                }
               }
             }
           }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
-      ],
-      "responses": {
-        "204": {
-          "description": "No Content"
-        },
-        "400": {
-          "description": "Bad Request"
-        },
-        "500": {
-          "description": "Internal Server Error"
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     }
