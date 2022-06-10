@@ -6,7 +6,7 @@ const validation = require('../middleware/validate');
 
 routes.get('/', userController.retrieveAll);
 
-routes.get('/:id', userController.retriveSingle);
+routes.get('/:id', userController.retrieveSingle);
 
 routes.post('/', validation.saveUser, userController.addUser);
 

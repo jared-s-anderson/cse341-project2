@@ -19,7 +19,7 @@ const retrieveAll = async (req, res) => {
 };
 
 // This gets information for a single user.
-const retriveSingle = async (req, res) => {
+const retrieveSingle = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('A valid id must be used to get user information.');
   }
@@ -100,7 +100,7 @@ const deleteUser = async (req, res) => {
 
 module.exports = {
   retrieveAll,
-  retriveSingle,
+  retrieveSingle,
   addUser,
   updateUser,
   deleteUser
