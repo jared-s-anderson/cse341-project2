@@ -2,23 +2,37 @@
   "swagger": "2.0",
   "info": {
     "title": "Comics API",
-    "description": "Comic Information",
+    "description": "This API retrieves comic and user information.",
     "version": "1.0.0"
   },
   "host": "cse341-comics.herokuapp.com",
   "basePath": "/",
   "schemes": ["http", "https"],
-  "paths": {
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
+  "tags": [
+    {
+      "name": "Comics",
+      "description": "Request Methods"
     },
+    {
+      "name": "Users",
+      "description": "Request Methods"
+    }
+  ],
+  "securityDefinitions": {
+    "oauth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://cse341-comics.herokuapp.com/api/auth",
+      "flow": "implicit",
+      "scopes": {
+        "read:comics": "read comic data"
+      }
+    }
+  },
+  "paths": {
     "/comics/": {
       "get": {
-        "description": "",
+        "tags": ["Comics"],
+        "description": "This retrieves information for all of the comics in the database.",
         "produces": ["application/json"],
         "parameters": [],
         "responses": {
@@ -31,7 +45,8 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": ["Comics"],
+        "description": "This adds a comic to the database.",
         "parameters": [
           {
             "name": "body",
@@ -85,7 +100,8 @@
     },
     "/comics/{id}": {
       "get": {
-        "description": "",
+        "tags": ["Comics"],
+        "description": "This retrieves a comic's information",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -105,7 +121,8 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": ["Comics"],
+        "description": "This updates a comic's information.",
         "parameters": [
           {
             "name": "id",
@@ -166,7 +183,8 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": ["Comics"],
+        "description": "This deletes a comic from the database.",
         "parameters": [
           {
             "name": "id",
@@ -190,7 +208,8 @@
     },
     "/users/": {
       "get": {
-        "description": "",
+        "tags": ["Users"],
+        "description": "This retrieves all the information for the users. Every password is hashed.",
         "produces": ["application/json"],
         "parameters": [],
         "responses": {
@@ -205,7 +224,8 @@
     },
     "/users/{id}": {
       "get": {
-        "description": "",
+        "tags": ["Users"],
+        "description": "This retrieves a user's information",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -225,7 +245,8 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": ["Users"],
+        "description": "This deletes a user from the database.",
         "parameters": [
           {
             "name": "id",
