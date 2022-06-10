@@ -21,7 +21,7 @@
   "securityDefinitions": {
     "oauth": {
       "type": "oauth2",
-      "authorizationUrl": "https://cse341-comics.herokuapp.com/api/auth",
+      "authorizationUrl": "https://cse341-comics.herokuapp.com/oauth2/authorize",
       "flow": "implicit",
       "scopes": {
         "read:comics": "read comic data"
