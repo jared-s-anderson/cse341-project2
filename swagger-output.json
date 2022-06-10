@@ -242,7 +242,7 @@
         "produces": ["application/json"],
         "parameters": [
           {
-            "name": "users",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -261,7 +261,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "users",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
