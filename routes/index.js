@@ -9,5 +9,6 @@ const routes = express.Router();
 routes.use('/api-docs', swaggerUi.serve);
 routes.get('/api-docs', requiresAuth(), swaggerUi.setup(swaggerDocument));
 routes.use('/comics', require('./comics'));
+routes.use('/users', require('./users'));
 
 module.exports = routes;

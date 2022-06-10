@@ -10,7 +10,7 @@ const retrieveAll = async (req, res) => {
     .find()
     .toArray((err, lists) => {
       if (err) {
-        res.status(400).json({ messge: err });
+        res.status(400).json({ message: err });
       }
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists);

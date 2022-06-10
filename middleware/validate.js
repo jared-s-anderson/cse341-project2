@@ -26,6 +26,29 @@ const saveComic = (req, res, next) => {
   });
 };
 
+const saveUser = (req, res, next) => {
+  const validationRule2 = {
+    tenant: 'requried|string',
+    connection: 'required|string',
+    email: 'required|email',
+    password: 'required|string',
+    debug: 'requred|string'
+  };
+
+  validator(req.body, validationRule2, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
 module.exports = {
-  saveComic
+  saveComic,
+  saveUser
 };
