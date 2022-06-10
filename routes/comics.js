@@ -9,15 +9,15 @@ const validation = require('../middleware/validate');
 routes.get('/', requiresAuth(), comicsController.retrieveAll);
 
 // This get request retrives information for a single issue.
-routes.get('/:id', comicsController.retriveSingle);
+routes.get('/:id', requiresAuth(), comicsController.retriveSingle);
 
 // This post request adds a comic to the database.
-routes.post('/', validation.saveComic, comicsController.addComic);
+routes.post('/', requiresAuth(), validation.saveComic, comicsController.addComic);
 
 // This put request updates an existing comic in the database.
-routes.put('/:id', validation.saveComic, comicsController.updateComic);
+routes.put('/:id', requiresAuth(), validation.saveComic, comicsController.updateComic);
 
 // This delete request deletes one of the comics from the database.
-routes.delete('/:id', comicsController.deleteComic);
+routes.delete('/:id', requiresAuth(), comicsController.deleteComic);
 
 module.exports = routes;
