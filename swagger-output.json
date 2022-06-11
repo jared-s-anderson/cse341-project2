@@ -24,7 +24,10 @@
       "authorizationUrl": "https://cse341-comics.herokuapp.com/oauth2/authorize",
       "flow": "implicit",
       "scopes": {
-        "read:comics": "read comic data"
+        "read:comics": "read comic data",
+        "write:comics": "write comic data",
+        "read:users": "read user data",
+        "write:users": "write user data"
       }
     }
   },
